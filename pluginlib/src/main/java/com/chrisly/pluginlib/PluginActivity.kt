@@ -9,7 +9,7 @@ import com.chrisly.pluginlib.IPlugin.Companion
  * @author big insect
  * @date 2019/5/28.
  */
-class PluginActivity: Activity(), IPlugin {
+open class PluginActivity: Activity(), IPlugin {
 
     //默认是内部跳转
     private var mFrom = Companion.FROM_INTERNAL
@@ -23,14 +23,14 @@ class PluginActivity: Activity(), IPlugin {
         if (savedInstanceState != null){
             mFrom = savedInstanceState.getInt("FROM")
         }
-        if (mFrom == Companion.FROM_EXTERNAL) {
+        if (mFrom == Companion.FROM_INTERNAL) {
             super.onCreate(savedInstanceState)
             mProxyActivity = this
         }
     }
 
     override fun setContentView(layoutResID: Int) {
-        if (mFrom == Companion.FROM_EXTERNAL) {
+        if (mFrom == Companion.FROM_INTERNAL) {
             super.setContentView(layoutResID)
         }else{
             mProxyActivity.setContentView(layoutResID)

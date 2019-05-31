@@ -20,7 +20,7 @@ class ProxyActivity: Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mClassName = intent.getStringExtra("className")
-        pluginApk = PluginManager.mPluginApk
+        pluginApk = PluginManager.getInstance().getPluginApk()
         launchPluginActivity()
     }
 

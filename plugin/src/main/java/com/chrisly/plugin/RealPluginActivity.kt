@@ -2,8 +2,9 @@ package com.chrisly.plugin
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.chrisly.pluginlib.PluginActivity
 
-class PluginActivity : AppCompatActivity() {
+class RealPluginActivity : PluginActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
